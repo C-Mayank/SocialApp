@@ -88,13 +88,24 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     @IBAction func postBtnTapped(_ sender: AnyObject) {
-        guard let caption = captionField.text, caption != "" else {
-            print("Caption must be entered")
-            return
-        }
         
         guard let img = imageAdd.image, imageSelected == true else {
             print("An image must be added")
+            let alert = UIAlertController(title: "Invalid Post", message: "Please choose an image", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        guard let caption = captionField.text, caption != "" else {
+            print("Caption must be entered")
+            let alert = UIAlertController(title: "Invalid Post", message: "Please enter a caption", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
             return
         }
         
