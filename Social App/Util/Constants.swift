@@ -16,3 +16,6 @@ let segueFeed = "goToFeed"
 
 let segueToSignIn = "goToSignIn"
 
+let segueToSettings = "goToSettings"
+
+let segueToFeeds = "goToFeed"

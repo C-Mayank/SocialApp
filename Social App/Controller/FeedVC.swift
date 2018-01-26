@@ -143,6 +143,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imageAdd.image = UIImage(named: "add-image")
     }
     
+    @IBAction func settingsTapped(_ sender: Any) {
+        performSegue(withIdentifier: segueToSettings, sender: nil)
+    }
+    
     @IBAction func signOutTapped(_ sender: AnyObject) {
         let keychainResult = KeychainWrapper.standard.remove(key: KEY_UID)
         print("MD: ID removed from keychain \(keychainResult)")
