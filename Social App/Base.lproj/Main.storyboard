@@ -425,7 +425,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="9Lg-xt-ah8">
-                                        <rect key="frame" x="7" y="7" width="50" height="50"/>
+                                        <rect key="frame" x="7" y="12" width="50" height="50"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="BsN-Ln-Ijr"/>
@@ -435,23 +435,39 @@
                                             <outletCollection property="gestureRecognizers" destination="Oxf-G7-0Xf" appends="YES" id="9ZK-3e-0TY"/>
                                         </connections>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DyN-vJ-19x">
+                                        <rect key="frame" x="297" y="17" width="70" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="fsa-D4-wmr"/>
+                                            <constraint firstAttribute="height" constant="30" id="ivy-w3-lDN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Update"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.77647058820000003" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="9Lg-xt-ah8" secondAttribute="bottom" constant="7" id="AaC-DY-efV"/>
                                     <constraint firstAttribute="height" constant="65" id="B4e-bg-8vL"/>
                                     <constraint firstItem="Isf-DG-XjM" firstAttribute="centerX" secondItem="v5L-t0-jgi" secondAttribute="centerX" id="TNt-el-DlK"/>
+                                    <constraint firstAttribute="bottom" secondItem="DyN-vJ-19x" secondAttribute="bottom" constant="18" id="aPy-JF-ZkQ"/>
+                                    <constraint firstItem="DyN-vJ-19x" firstAttribute="top" secondItem="v5L-t0-jgi" secondAttribute="top" constant="17" id="fQ0-tZ-3ai"/>
                                     <constraint firstItem="Isf-DG-XjM" firstAttribute="centerY" secondItem="v5L-t0-jgi" secondAttribute="centerY" id="iZw-Ay-xVv"/>
-                                    <constraint firstItem="9Lg-xt-ah8" firstAttribute="top" secondItem="v5L-t0-jgi" secondAttribute="top" constant="7" id="pNh-LI-xgB"/>
+                                    <constraint firstItem="9Lg-xt-ah8" firstAttribute="top" secondItem="v5L-t0-jgi" secondAttribute="top" constant="12" id="pNh-LI-xgB"/>
+                                    <constraint firstAttribute="trailing" secondItem="DyN-vJ-19x" secondAttribute="trailing" constant="8" id="xVL-ax-rbm"/>
                                     <constraint firstItem="9Lg-xt-ah8" firstAttribute="leading" secondItem="v5L-t0-jgi" secondAttribute="leading" constant="7" id="zlJ-NN-UaM"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="client-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Lzn-zA-tQe" customClass="CircleView" customModule="Social_App" customModuleProvider="target">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="client-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Lzn-zA-tQe" customClass="CircleView" customModule="Social_App" customModuleProvider="target">
                                 <rect key="frame" x="46" y="119" width="283" height="238"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="283" id="lBZ-SA-9ZK"/>
                                     <constraint firstAttribute="height" constant="238" id="pvI-dw-PGG"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="aYh-ld-C7d" appends="YES" id="sae-8C-EAD"/>
+                                </connections>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCE-Af-cHc" customClass="FancyField" customModule="Social_App" customModuleProvider="target">
                                 <rect key="frame" x="62" y="403" width="250" height="40"/>
@@ -465,6 +481,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="v5L-t0-jgi" firstAttribute="leading" secondItem="xJ0-Vj-sUj" secondAttribute="leading" id="4Nv-Su-uGD"/>
                             <constraint firstItem="v5L-t0-jgi" firstAttribute="top" secondItem="nj5-ta-yV8" secondAttribute="top" id="DIX-od-sDd"/>
@@ -486,6 +503,11 @@
                 <tapGestureRecognizer id="Oxf-G7-0Xf">
                     <connections>
                         <action selector="backBtnTapped:" destination="yyV-U8-tld" id="wwQ-Pj-t7o"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="aYh-ld-C7d">
+                    <connections>
+                        <action selector="imgEdit:" destination="yyV-U8-tld" id="vsj-cU-nZH"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
